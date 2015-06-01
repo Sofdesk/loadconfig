@@ -1,0 +1,78 @@
+{
+    "esnext": true,
+    "excludeFiles": [
+        "node_modules/**"
+    ],
+    "fileExtensions": [".js"],
+    "disallowKeywords": ["with"],
+    "disallowMultipleLineBreaks": true,
+    "disallowMultipleSpaces": true,
+    "disallowMultipleVarDecl": "exceptUndefined",
+    "disallowNamedUnassignedFunctions": true,
+    "disallowNewlineBeforeBlockStatements": true,
+    "disallowOperatorBeforeLineBreak": ["."],
+    "disallowQuotedKeysInObjects": true,
+    "disallowSpaceAfterObjectKeys": true,
+    "disallowSpacesInCallExpression": true,
+    "disallowSpacesInFunction": {
+        "beforeOpeningRoundBrace": true
+    },
+    "disallowTrailingWhitespace": true,
+    "disallowYodaConditions": true,
+
+    "requireBlocksOnNewline": 1,
+    "requireCamelCaseOrUpperCaseIdentifiers": "ignoreProperties",
+    "requireCapitalizedConstructors": true,
+    "requireCommaBeforeLineBreak": true,
+    "requireCurlyBraces": [
+        "if",
+        "else",
+        "for",
+        "while",
+        "do",
+        "try",
+        "catch",
+        "case",
+        "default"
+    ],
+    "requireDotNotation": true,
+    "requireKeywordsOnNewLine": ["else"],
+    "requireLineFeedAtFileEnd": true,
+    "requirePaddingNewLinesAfterUseStrict": true,
+    "requirePaddingNewLinesBeforeExport": true,
+    "requireParenthesesAroundIIFE": true,
+    "requireSemicolons": true,
+    "requireSpaceAfterBinaryOperators": ["=", "+", "-", "/", "*", "==", "===", "!=", "!=="],
+    "requireSpaceBeforeBinaryOperators": ["=", "+", "-", "/", "*", "==", "===", "!=", "!=="],
+    "requireSpaceAfterKeywords": [
+        "do",
+        "for",
+        "if",
+        "else",
+        "switch",
+        "case",
+        "try",
+        "catch",
+        "void",
+        "while",
+        "with",
+        "return",
+        "typeof"
+    ],
+    "requireSpaceAfterLineComment": true,
+    "requireSpaceBeforeBlockStatements": true,
+    "requireSpaceBetweenArguments": true,
+    "requireSpacesInConditionalExpression": true,
+    "requireSpacesInForStatement": true,
+    "requireSpacesInFunction": {
+        "beforeOpeningCurlyBrace": true
+    },
+    "requireSpacesInsideObjectBrackets": "all",
+    "requireTrailingComma": {
+        "ignoreSingleLine":true,
+        "ignoreSingleValue":true
+    },
+    "validateIndentation": "\t",
+    "validateLineBreaks": "LF",
+    "validateParameterSeparator": ", "
+}

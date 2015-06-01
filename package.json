@@ -1,0 +1,35 @@
+{
+  "name": "loadconfig",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "lint": "bash lint.sh",
+    "test": "bash test.sh"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Sofdesk/loadconfig.git"
+  },
+  "keywords": [
+    "config",
+    "configuration"
+  ],
+  "author": "Sofdesk",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sofdesk/loadconfig/issues"
+  },
+  "homepage": "https://github.com/Sofdesk/loadconfig",
+  "dependencies": {
+    "extend": "^2.0.1"
+  },
+  "devDependencies": {
+    "chai": "^2.3.0",
+    "env-test": "^1.0.0",
+    "jscs": "^1.13.1",
+    "jshint": "~2.7.0",
+    "mocha": "~2.2.4",
+    "should": "^6.0.3"
+  }
+}

@@ -1,0 +1,6 @@
+public/js/bundle.js
+public/js/publicBundle.js
+public/js/public.js
+node_modules/
+public/bower_components/
+public/templates/

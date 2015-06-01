@@ -1,0 +1,13 @@
+{
+  "devel": false,
+  "node": true,
+  "browser": false,
+  "mocha": true,
+  "undef": true,
+  "unused": true,
+  "strict":true,
+  "globals": {
+    "localStorage": false,
+    "Promise": true
+  }
+}
