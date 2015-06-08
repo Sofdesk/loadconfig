@@ -3,6 +3,7 @@
 var fs = require('fs');
 var extend = require('extend');
 var NODE_ENV = process.env.NODE_ENV;
+var cached = {};
 
 var mergeConfig = function(oldConfig, newConfig) {
 	return extend(true, oldConfig, newConfig || {});
@@ -29,6 +30,16 @@ var getConfigFile = function(dir, filename, debug) {
 module.exports = function(baseDir, debug) {
 	if (debug) {
 		console.log("CONFIG : current environment: " + NODE_ENV);
+	}
+
+	if (cached[baseDir]) {
+		if (debug) {
+			console.log("CONFIG : loading from cache");
+		}
+		return cached[baseDir];
+	}
+
+	if (debug) {
 		console.log("CONFIG : current folder: " + baseDir);
 	}
 

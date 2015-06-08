@@ -30,3 +30,14 @@ describe("#loadTest", function() {
 	});
 
 });
+
+describe("#cached", function() {
+	var path = __dirname + '/configs';
+
+	it("should load cached config", function() {
+		var config1 = loadconfig(path);
+		var config2 = loadconfig(path);
+		config1.random.should.be.equal(config2.random);
+	});
+
+});
