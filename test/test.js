@@ -41,3 +41,13 @@ describe("#cached", function() {
 	});
 
 });
+
+describe("#change environment", function() {
+	var path = __dirname + '/configs';
+
+	it("should load dev config", function() {
+		var config = loadconfig(path, false, 'dev');
+		config.should.have.properties(['dev']);
+	});
+
+});

@@ -2,7 +2,6 @@
 
 var fs = require('fs');
 var extend = require('extend');
-var NODE_ENV = process.env.NODE_ENV;
 var cached = {};
 
 var mergeConfig = function(oldConfig, newConfig) {
@@ -27,16 +26,17 @@ var getConfigFile = function(dir, filename, debug) {
 	return config;
 };
 
-module.exports = function(baseDir, debug) {
+module.exports = function(baseDir, debug, environment) {
+	var env = environment || process.env.NODE_ENV;
 	if (debug) {
-		console.log("CONFIG : current environment: " + NODE_ENV);
+		console.log("CONFIG : current environment: " + env);
 	}
 
-	if (cached[baseDir]) {
+	if (cached[baseDir] && cached[baseDir][env]) {
 		if (debug) {
 			console.log("CONFIG : loading from cache");
 		}
-		return cached[baseDir];
+		return cached[baseDir][env];
 	}
 
 	if (debug) {
@@ -49,12 +49,15 @@ module.exports = function(baseDir, debug) {
 	// to load the config files :
 	//     test.js
 	//     test.dev.js
-	var envs = NODE_ENV && NODE_ENV.split(" ") || [];
+	var envs = env && env.split(" ") || [];
 	for (var i = 0; i < envs.length; i++) {
-		var env = envs.slice(0, i + 1).join(".");
-		config = mergeConfig(config, getConfigFile(baseDir, env, debug));
-		config = mergeConfig(config, getConfigFile(baseDir, env + '.local', debug));
+		var _env = envs.slice(0, i + 1).join(".");
+		config = mergeConfig(config, getConfigFile(baseDir, _env, debug));
+		config = mergeConfig(config, getConfigFile(baseDir, _env + '.local', debug));
 	}
+
+	cached[baseDir] = cached[baseDir] || {};
+	cached[baseDir][env] = config;
 
 	return config;
 };
