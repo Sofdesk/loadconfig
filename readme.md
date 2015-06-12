@@ -10,6 +10,7 @@ npm install --save loadconfig
 The goal of this module is to have a configuration that can be loaded from the environment, but also from local settings.
 
 So, if the environment is set to `test`, the file are loaded (and overrided) in this order:
+
 1. global.js (this is usually where you will have all your defaults)
 2. local.js (this file is not in Git, it overrides configs only for _you_)
 3. test.js (base on the environment, it may override the local)
