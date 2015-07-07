@@ -14,6 +14,9 @@ var getConfigFile = function(dir, filename, debug) {
 	var file = dir + "/" + filename + '.js';
 
 	if (fs.existsSync(file)) {
+		// delete require cache : http://stackoverflow.com/a/11477602/808657
+		delete require.cache[require.resolve(file)];
+
 		config = require(file);
 		if (debug) {
 			console.log("CONFIG : Loaded " + filename + ".js");

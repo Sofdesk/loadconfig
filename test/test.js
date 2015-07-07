@@ -29,6 +29,13 @@ describe("#loadTest", function() {
 		config.env.should.be.equal('testlocal');
 	});
 
+	it("should load only global config", function() {
+		var config1 = loadconfig(path, false, 'test');
+		var config2 = loadconfig(path, false, 'nothing');
+		config1.should.have.properties(['testlocal']);
+		config2.should.not.have.properties(['testlocal']);
+	});
+
 });
 
 describe("#cached", function() {
