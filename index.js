@@ -2,6 +2,7 @@
 
 var fs = require('fs');
 var extend = require('extend');
+var path = require('path');
 var cached = {};
 
 var mergeConfig = function(oldConfig, newConfig) {
@@ -30,6 +31,8 @@ var getConfigFile = function(dir, filename, debug) {
 };
 
 module.exports = function(baseDir, debug, environment) {
+	baseDir = path.resolve(baseDir);
+
 	var env = environment || process.env.NODE_ENV;
 	if (debug) {
 		console.log("CONFIG : current environment: " + env);

@@ -47,6 +47,12 @@ describe("#cached", function() {
 		config1.random.should.be.equal(config2.random);
 	});
 
+	it("should load cached config even for relative paths", function() {
+		var config1 = loadconfig(path);
+		var config2 = loadconfig(path + '/../configs');
+		config1.random.should.be.equal(config2.random);
+	});
+
 });
 
 describe("#change environment", function() {

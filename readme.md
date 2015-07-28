@@ -1,5 +1,5 @@
 # loadconfig
-> It loads the right configuration.
+Configuration loader for teams.
 
 # Installation
 ```
