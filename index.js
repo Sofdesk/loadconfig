@@ -1,12 +1,17 @@
 "use strict";
 
 var fs = require('fs');
-var extend = require('extend');
+var _ = require('lodash');
 var path = require('path');
 var cached = {};
 
 var mergeConfig = function(oldConfig, newConfig) {
-	return extend(true, {}, oldConfig, newConfig || {});
+	// from http://stackoverflow.com/a/32141113/808657
+	return _.merge(oldConfig, newConfig || {}, function(a, b) {
+		if (_.isArray(a)) {
+			return b;
+		}
+	});
 };
 
 var getConfigFile = function(dir, filename, debug) {

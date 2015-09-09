@@ -14,6 +14,8 @@ describe("#loadTest", function() {
 	it("should load local config", function() {
 		var config = loadconfig(path);
 		config.should.have.properties(['local']);
+		config.array.should.have.lengthOf(1);
+		config.array[0].should.be.equal('only_me');
 	});
 	it("should load test config", function() {
 		var config = loadconfig(path);

@@ -6,4 +6,5 @@ module.exports = {
 	val2: 2,
 	val3: 3,
 	random: Math.random(),
+	array: ['value1', 'value2'],
 };

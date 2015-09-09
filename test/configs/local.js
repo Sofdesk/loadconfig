@@ -4,4 +4,5 @@ module.exports = {
 	env: 'local',
 	val3: 'test3',
 	local: 'local',
+	array: ['only_me'],
 };
