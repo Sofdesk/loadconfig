@@ -6,7 +6,7 @@ var path = require('path');
 var cached = {};
 
 var mergeConfig = function(oldConfig, newConfig) {
-	return extend(true, oldConfig, newConfig || {});
+	return extend(true, {}, oldConfig, newConfig || {});
 };
 
 var getConfigFile = function(dir, filename, debug) {
