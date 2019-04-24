@@ -1,14 +1,14 @@
 "use strict";
 
 var fs = require('fs');
-var _ = require('lodash');
+var mergeWith = require('lodash.mergewith');
 var path = require('path');
 var cached = {};
 
 var mergeConfig = function(oldConfig, newConfig) {
 	// from http://stackoverflow.com/a/32141113/808657
-	return _.merge(oldConfig, newConfig || {}, function(a, b) {
-		if (_.isArray(a)) {
+	return mergeWith(oldConfig, newConfig || {}, function(a, b) {
+		if (Array.isArray(a)) {
 			return b;
 		}
 	});
